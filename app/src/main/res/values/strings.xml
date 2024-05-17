@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TestSetup</string>
+    <string name="todo_cell_title">Title</string>
+    <string name="todo_cell_date">17/05/2024</string>
+</resources>
