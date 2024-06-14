@@ -6,8 +6,8 @@
     <color name="yellow_note_bg">#FCECAB</color>
     <color name="note_date_color">#CC7B5B</color>
 
-    <color name="button_icons_bg">@color/black</color>
+    <color name="button_icons_bg">@color/white</color>
 
-    <color name="app_adaptive_theme_bg">@color/white</color>
-    <color name="app_principal_color">#fdedac</color>
+    <color name="app_adaptive_theme_bg">@color/black</color>
+
 </resources>

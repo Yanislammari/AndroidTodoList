@@ -27,7 +27,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/todo_cell_bg"
+            android:background="@color/yellow_note_bg"
             android:orientation="vertical"
             android:gravity="center|start"
             android:paddingStart="16dp"
@@ -52,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/todo_cell_date"
                 android:textSize="12sp"
-                android:textColor="@color/text_date_cell_color" />
+                android:textColor="@color/note_date_color" />
 
         </LinearLayout>
 

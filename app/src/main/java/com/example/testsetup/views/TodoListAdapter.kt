@@ -1,14 +1,15 @@
-package com.example.testsetup
+package com.example.testsetup.views
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.example.testsetup.R
+import com.example.testsetup.model.Todo
 
-class TodoListAdapter(val todoList: ArrayList<Todo>, val todoClickHandler: TodoOnclickListener) : RecyclerView.Adapter<TodoListAdapter.TodoViewHolder>(){
+class TodoListAdapter(val todoList: List<Todo>, val todoClickHandler: TodoOnclickListener) : RecyclerView.Adapter<TodoListAdapter.TodoViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TodoViewHolder {
         val todoView = LayoutInflater.from(parent.context).inflate(R.layout.todo_cell_layout, parent, false)

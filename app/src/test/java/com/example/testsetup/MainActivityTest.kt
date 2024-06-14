@@ -1,14 +1,14 @@
 package com.example.testsetup
 
+import com.example.testsetup.views.verifyPassword
 import junit.framework.TestCase.assertTrue
 import org.junit.Test
-import org.junit.Assert.*
 
-class MainActivityTest{
+class MainActivityTotoTest {
     @Test
-    fun `Check Valid Password`(){
+    fun `Check Valid Password`() {
         // Setup
-        val password = "Pass0rd123!"
+        val password = "Password123!"
         // Test
         val errors = verifyPassword(password)
         // Resultat / Check / Assertion
@@ -16,39 +16,52 @@ class MainActivityTest{
     }
 
     @Test
-    fun `Check Length Password`(){
-        val password = "Pass0rd123!"
+    fun `Check Password Length`() {
+        // Setup
+        val password = "123"
+        // Test
         val errors = verifyPassword(password)
-        assertTrue(!errors.contains("Le mot de passe doit contenir au moins 6 caractères."))
+        // Resultat / Check / Assertion
+        assertTrue(errors.contains("Le mot de passe doit contenir au moins 6 caractères."))
     }
 
     @Test
-    fun `Check Uppercase Password`(){
-        val password = "Pass0rd123!"
+    fun `Check Password Uppercase`() {
+        // Setup
+        val password = "password123!"
+        // Test
         val errors = verifyPassword(password)
-        assertTrue(!errors.contains("Le mot de passe doit contenir au moins une lettre majuscule."))
+        // Resultat / Check / Assertion
+        assertTrue(errors.contains("Le mot de passe doit contenir au moins une lettre majuscule."))
     }
 
     @Test
-    fun `Check Lowercase Password`(){
-        val password = "AAZZZaZ"
+    fun `Check Password Lowercase`() {
+        // Setup
+        val password = "PASSWORD123!"
+        // Test
         val errors = verifyPassword(password)
-        assertTrue(!errors.contains("Le mot de passe doit contenir au moins une lettre minuscule."))
+        // Resultat / Check / Assertion
+        assertTrue(errors.contains("Le mot de passe doit contenir au moins une lettre minuscule."))
     }
 
     @Test
-    fun `Check Number Password`(){
-        val password = "Pass0rd123"
+    fun `Check Password Digit`() {
+        // Setup
+        val password = "Password!"
+        // Test
         val errors = verifyPassword(password)
-        assertTrue(!errors.contains("Le mot de passe doit contenir au moins un chiffre."))
+        // Resultat / Check / Assertion
+        assertTrue(errors.contains("Le mot de passe doit contenir au moins un chiffre."))
     }
 
     @Test
-    fun `Check Specials Char Password`(){
-        val password = "Pass0rd123"
-        val caracteresSpeciaux = "~`!@#\\$%\\^&*\\(\\)-_+=<>?/\\[]\\{}|"
+    fun `Check Password Special Character`() {
+        // Setup
+        val password = "Password123"
+        // Test
         val errors = verifyPassword(password)
-        assertTrue(!errors.contains("Le mot de passe doit contenir au moins un caractère spécial parmi $caracteresSpeciaux."))
+        // Resultat / Check / Assertion
+        assertTrue(errors.isEmpty())
     }
-
 }
